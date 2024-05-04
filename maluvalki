@@ -1,0 +1,104 @@
+from turtle import*
+t = Turtle()
+a=7
+t.width(a)
+t.shape('circle')
+t.speed(100)
+
+def draw(x,y):
+    t.goto(x,y)
+
+def move(x,y):
+    t.up()
+    t.goto(x,y)
+    t.down()
+
+def startFill():
+    t.begin_fill()
+
+def endFill():
+    t.end_fill()
+
+def x():
+    t.color('dlue')
+
+scr=t.getscreen()
+scr.onkey(x,'x')
+
+t.ondrag(draw)
+scr.listen()
+
+def stepUp():
+    t.goto(t.xcor(),t.ycor() +15)
+
+def stepDown():
+    t.goto(t.xcor(),t.ycor() -15)
+
+def stepLeft():
+    t.goto(t.xcor() -15 ,t.ycor() )
+
+def stepRight():
+    t.goto(t.xcor() +15 ,t.ycor() )
+
+scr.onkey(stepUp,'Up')
+scr.onkey(stepDown,'Down')
+scr.onkey(stepLeft,'Left')
+scr.onkey(stepRight,'Right')
+
+def setRed():
+    t.color('red')
+
+def setBlue():
+    t.color('blue')
+
+def setYellow():
+    t.color('yellow')
+
+def setGreen():
+    t.color('green')
+
+def setPurple():
+    t.color('purple')
+
+def setBlack():
+    t.color('black')
+
+def setBrown():
+    t.color('brown')
+
+def setGray():
+    t.color('gray')
+
+def beginWipe():
+    t.color('white')
+    t.begin_fill
+
+def endWipe():
+    t.color('white')
+    t.end_fill()
+
+def wid():
+    global a
+    a += 1
+    t.width(a)
+
+def wid2():
+    global a
+    a -= 1
+    t.width(a)
+
+scr.onscreenclick(move)
+scr.onkey(setRed,'r')
+scr.onkey(setBlue,'b')
+scr.onkey(setYellow,'y')
+scr.onkey(setGreen,'g')
+scr.onkey(setPurple,'p')
+scr.onkey(setBlack,'d')
+scr.onkey(startFill,'f')
+scr.onkey(endFill,'e')
+scr.onkey(setBrown,'n')
+scr.onkey(setGray,'h')
+scr.onkey(wid,'v')
+scr.onkey(wid2,'c')
+scr.onkey(beginWipe,'s')
+scr.onkey(endWipe,'z')
